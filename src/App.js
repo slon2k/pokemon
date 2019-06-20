@@ -5,13 +5,14 @@ import PokemonList from "./PokemonList";
 import Pagination from "./Pagination";
 import Api from "./ApiService"
 
-
-
 export default class App extends React.Component {
 
     state = {
         loading: true,
-        pokemons: []
+        pokemons: [],
+        page: 1,
+        pageSize: 5,
+
     }
 
     api = new Api();
@@ -21,10 +22,8 @@ export default class App extends React.Component {
     }
 
     render () {
-        // this.api.GetPokemon(1).then(console.log);
 
         console.log(this.state);
-
 
         return (
             <div>
@@ -35,6 +34,4 @@ export default class App extends React.Component {
             </div>
         )
     }
-
-
 }
