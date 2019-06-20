@@ -13,4 +13,15 @@ export default class Api {
 
         return await result.json();
     }
+
+    async GetPokemons({page = 1, pageSize = 20}) {
+        const url = `${BASE_URL}${ENDPOINT}/?limit=${pageSize}&offset=${(page - 1)*pageSize}`;
+        const result = await fetch(url);
+
+        if (!result.ok) {
+            throw new Error(result.statusText)
+        }
+
+        return await result.json();
+    }
 }
