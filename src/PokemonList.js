@@ -1,9 +1,12 @@
 import React from 'react'
+import PokemonItem from "./PokemonItem";
 
-const PokemonList = () => {
+const PokemonList = ({items}) => {
+    const itemsList = items.map(item => <PokemonItem key={item.name} item={item}/>)
+
     return (
         <div>
-            <h3>Pokemon list</h3>
+            {itemsList}
         </div>
     )
 }

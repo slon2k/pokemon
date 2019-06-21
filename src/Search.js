@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Search = () => {
+const Search = ({filter, onChange}) => {
     return(
         <div>
-            <h3>Search</h3>
+            <input type="text"
+                   value={filter}
+                   onChange={onChange}
+                   placeholder={"Pikachu ..."}
+            />
         </div>
     )
 }
